@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 });
 
 // Endpoint untuk scraping
-app.get("/", async (req, res) => {
+app.get("/scrape", async (req, res) => {
     try {
         const url = req.query.url;
 
