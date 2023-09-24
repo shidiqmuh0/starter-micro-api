@@ -1,16 +1,13 @@
 const express = require("express");
 const axios = require("axios");
 const cheerio = require("cheerio");
+const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT || 3000; // Memperbarui port agar sesuai dengan lingkungan
+const port = process.env.PORT || 3000;
 
 // Middleware untuk mengizinkan CORS
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+app.use(cors());
 
 // Endpoint untuk scraping
 app.get("/scrape", async (req, res) => {
